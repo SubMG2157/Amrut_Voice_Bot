@@ -1,0 +1,21 @@
+# KIMS Hospital AI Agent — Runtime Logs
+# Started: 2026-03-26T07:29:16.684Z
+────────────────────────────────────────────────────────────
+
+[2026-03-26T07:29:16.706Z] [INFO] File logger initialized → logs/logs.txt
+[2026-03-26T07:29:16.707Z] [INFO] Plivo: LOADED
+[2026-03-26T07:29:16.761Z] [INFO] 
+🚀 अमृत सरकारी योजना पोर्टल Agent — Running on port 3001
+[2026-03-26T07:29:16.762Z] [INFO] ──────────────────────────────────────────
+[2026-03-26T07:29:16.763Z] [INFO]   🌐 Frontend:  http://localhost:3001
+[2026-03-26T07:29:16.764Z] [INFO]   📡 API:       http://localhost:3001/api/...
+[2026-03-26T07:29:16.765Z] [INFO]   📞 Plivo:     https://d871-2409-40c2-1153-ad08-7014-114a-284c-3ea4.ngrok-free.app/plivo/answer
+[2026-03-26T07:29:16.766Z] [INFO]   🔗 ngrok URL: https://d871-2409-40c2-1153-ad08-7014-114a-284c-3ea4.ngrok-free.app
+[2026-03-26T07:29:16.767Z] [INFO] ──────────────────────────────────────────
+[2026-03-26T07:29:16.767Z] [INFO]   Share this with customers: https://d871-2409-40c2-1153-ad08-7014-114a-284c-3ea4.ngrok-free.app
+[2026-03-26T07:29:16.768Z] [INFO] ──────────────────────────────────────────
+
+[2026-03-26T07:30:31.651Z] [INFO] [GeminiProxy] New proxy connection from browser
+[2026-03-26T07:30:32.059Z] [INFO] [GeminiProxy] Connected to Google Gemini
+[2026-03-26T07:39:23.084Z] [INFO] [GeminiProxy] New proxy connection from browser
+[2026-03-26T07:39:23.767Z] [INFO] [GeminiProxy] Connected to Google Gemini

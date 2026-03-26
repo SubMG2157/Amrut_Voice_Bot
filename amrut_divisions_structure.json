@@ -1,0 +1,387 @@
+{
+  "organizationalStructure": {
+    "mainOrganization": {
+      "name": "AMRUT",
+      "fullName": {
+        "en": "Academy of Maharashtra Research, Upliftment and Training",
+        "mr": "महाराष्ट्र संशोधन, उन्नती व प्रशिक्षण प्रबोधनी"
+      },
+      "type": "Main Autonomous Organization",
+      "typeMr": "मुख्य स्वायत्त संस्था"
+    },
+    "divisions": [
+      {
+        "id": "amrut_vidya",
+        "name": {
+          "en": "Amrut Vidya",
+          "mr": "अमृत विद्या"
+        },
+        "tagline": {
+          "en": "Complete platform for knowledge acquisition",
+          "mr": "ज्ञानार्जनाचा परिपूर्ण मंच"
+        },
+        "type": "division",
+        "typeMr": "विभाग",
+        "description": {
+          "en": "Educational division focused on competitive exam preparation, skill development training, and knowledge enhancement programs",
+          "mr": "स्पर्धा परीक्षा तयारी, कौशल्य विकास प्रशिक्षण आणि ज्ञान वृद्धी कार्यक्रमांवर केंद्रित शैक्षणिक विभाग"
+        },
+        "focusAreas": [
+          "Competitive Exam Coaching (UPSC, MPSC, etc.)",
+          "Skill Development Training",
+          "Educational Support Programs",
+          "Professional Certification Courses"
+        ],
+        "focusAreasMr": [
+          "स्पर्धा परीक्षा प्रशिक्षण (UPSC, MPSC इ.)",
+          "कौशल्य विकास प्रशिक्षण",
+          "शैक्षणिक समर्थन कार्यक्रम",
+          "व्यावसायिक प्रमाणपत्र अभ्यासक्रम"
+        ],
+        "status": "Active",
+        "statusMr": "सक्रिय",
+        "website": "Part of mahaamrut.org.in",
+        "sampleSchemes": [
+          "UPSC स्पर्धा परीक्षा प्रशिक्षण",
+          "MPSC परीक्षा मार्गदर्शन",
+          "CNC Machining प्रशिक्षण",
+          "Digital Marketing कोर्स",
+          "AIIMS, IIT, IIM प्रवेश समर्थन"
+        ]
+      },
+      {
+        "id": "amrut_peth",
+        "name": {
+          "en": "Amrut Peth",
+          "mr": "अमृत पेठ"
+        },
+        "tagline": {
+          "en": "For quality and affordable products",
+          "mr": "दर्जेदार व किफायतशीर उत्पादनांसाठी"
+        },
+        "type": "division",
+        "typeMr": "विभाग",
+        "description": {
+          "en": "E-commerce marketplace platform for buying and selling quality products at affordable prices. Provides entrepreneurship opportunities through online business development.",
+          "mr": "दर्जेदार उत्पादने परवडणाऱ्या किमतीत खरेदी-विक्री करण्यासाठी ई-कॉमर्स बाजारपेठ व्यासपीठ. ऑनलाइन व्यवसाय विकासाद्वारे उद्योजकतेच्या संधी प्रदान करते."
+        },
+        "focusAreas": [
+          "E-commerce platform development",
+          "Micro-entrepreneur support",
+          "Online marketplace training",
+          "Digital business skills"
+        ],
+        "focusAreasMr": [
+          "ई-कॉमर्स प्लॅटफॉर्म विकास",
+          "सूक्ष्म उद्योजक समर्थन",
+          "ऑनलाइन बाजारपेठ प्रशिक्षण",
+          "डिजिटल व्यवसाय कौशल्ये"
+        ],
+        "status": "Active",
+        "statusMr": "सक्रिय",
+        "website": "https://amrutpeth.com",
+        "sampleSchemes": [
+          "अमृत पेठ (ई-कॉमर्स सूक्ष्म उद्योजक)",
+          "अमृत पेठ थेट बाजारपेठ व्यवस्थापन",
+          "E-commerce प्रशिक्षण योजना"
+        ]
+      },
+      {
+        "id": "amrut_maharashtra",
+        "name": {
+          "en": "Amrut Maharashtra",
+          "mr": "अमृत महाराष्ट्र"
+        },
+        "tagline": {
+          "en": "State development initiative",
+          "mr": "राज्य विकास उपक्रम"
+        },
+        "type": "division",
+        "typeMr": "विभाग",
+        "description": {
+          "en": "State-wide development portal and information dissemination platform covering rural, social, and cultural aspects. Provides latest news, government initiatives, and positive developments in Maharashtra.",
+          "mr": "ग्रामीण, सामाजिक आणि सांस्कृतिक पैलूंचा समावेश असलेले राज्यव्यापी विकास पोर्टल आणि माहिती प्रसार मंच. महाराष्ट्रातील नवीनतम बातम्या, सरकारी उपक्रम आणि सकारात्मक घडामोडी प्रदान करते."
+        },
+        "focusAreas": [
+          "News and information portal",
+          "Government scheme awareness",
+          "Rural development coverage",
+          "Social and cultural initiatives"
+        ],
+        "focusAreasMr": [
+          "बातमी आणि माहिती पोर्टल",
+          "सरकारी योजना जागरूकता",
+          "ग्रामीण विकास कव्हरेज",
+          "सामाजिक आणि सांस्कृतिक उपक्रम"
+        ],
+        "status": "Active",
+        "statusMr": "सक्रिय",
+        "website": "https://amrutmaharashtra.org",
+        "purpose": "Social commitment initiative to provide information about AMRUT schemes, events, and positive developments in rural, social, and cultural life"
+      },
+      {
+        "id": "amrut_manasmitra",
+        "name": {
+          "en": "Amrut Manasmitra",
+          "mr": "अमृत मानसमित्र"
+        },
+        "tagline": {
+          "en": "For every emotion in your mind",
+          "mr": "मनातल्या प्रत्येक भावनेसाठी"
+        },
+        "type": "initiative",
+        "typeMr": "उपक्रम",
+        "description": {
+          "en": "Mental health and emotional wellness initiative providing psychological support, counseling services, and emotional well-being programs",
+          "mr": "मानसिक आरोग्य आणि भावनिक निरोगीपणा उपक्रम जो मानसिक समर्थन, समुपदेशन सेवा आणि भावनिक कल्याण कार्यक्रम प्रदान करतो"
+        },
+        "focusAreas": [
+          "Mental health awareness",
+          "Psychological counseling",
+          "Emotional support services",
+          "Wellness programs"
+        ],
+        "focusAreasMr": [
+          "मानसिक आरोग्य जागरूकता",
+          "मानसिक समुपदेशन",
+          "भावनिक समर्थन सेवा",
+          "निरोगीपणा कार्यक्रम"
+        ],
+        "status": "Active",
+        "statusMr": "सक्रिय"
+      },
+      {
+        "id": "amrut_drone_mission",
+        "name": {
+          "en": "Amrut Drone Mission",
+          "mr": "अमृत ड्रोन मिशन"
+        },
+        "tagline": {
+          "en": "Empowering Indian skies",
+          "mr": "भारतीय आकाश सशक्त करणे"
+        },
+        "type": "initiative",
+        "typeMr": "उपक्रम",
+        "description": {
+          "en": "Drone technology training and remote pilot certification initiative to prepare youth for careers in emerging aviation technology sector",
+          "mr": "उदयोन्मुख विमानन तंत्रज्ञान क्षेत्रात युवकांना करिअरसाठी तयार करण्यासाठी ड्रोन तंत्रज्ञान प्रशिक्षण आणि रिमोट पायलट प्रमाणपत्र उपक्रम"
+        },
+        "focusAreas": [
+          "Drone operator training",
+          "Remote pilot certification",
+          "Aviation technology skills",
+          "Agricultural drone applications"
+        ],
+        "focusAreasMr": [
+          "ड्रोन ऑपरेटर प्रशिक्षण",
+          "रिमोट पायलट प्रमाणपत्र",
+          "विमानन तंत्रज्ञान कौशल्ये",
+          "कृषी ड्रोन अनुप्रयोग"
+        ],
+        "status": "Active",
+        "statusMr": "सक्रिय",
+        "sampleSchemes": [
+          "ड्रोन ऑपरेटर रिमोट पायलट प्रशिक्षण योजना"
+        ]
+      },
+      {
+        "id": "amrut_paryatan",
+        "name": {
+          "en": "Amrut Paryatan",
+          "mr": "अमृत पर्यटन"
+        },
+        "tagline": {
+          "en": "See Maharashtra through Amrut's eyes",
+          "mr": "पाहा महाराष्ट्र..अमृतच्या नजरेतून"
+        },
+        "type": "initiative",
+        "typeMr": "उपक्रम",
+        "description": {
+          "en": "Tourism promotion initiative showcasing Maharashtra's culture, heritage, and tourist destinations while creating employment opportunities in tourism sector",
+          "mr": "महाराष्ट्राची संस्कृती, वारसा आणि पर्यटन स्थळे प्रदर्शित करणारा पर्यटन प्रोत्साहन उपक्रम जो पर्यटन क्षेत्रात रोजगाराच्या संधी निर्माण करतो"
+        },
+        "focusAreas": [
+          "Tourism promotion",
+          "Cultural heritage showcase",
+          "Tourist guide training",
+          "Hospitality skill development"
+        ],
+        "focusAreasMr": [
+          "पर्यटन प्रोत्साहन",
+          "सांस्कृतिक वारसा प्रदर्शन",
+          "पर्यटक मार्गदर्शक प्रशिक्षण",
+          "आतिथ्य कौशल्य विकास"
+        ],
+        "status": "Coming Soon",
+        "statusMr": "लवकरच सुरू होत आहे"
+      },
+      {
+        "id": "amrut_udyam_mission",
+        "name": {
+          "en": "Amrut Udyam Mission",
+          "mr": "अमृत उद्यम मिशन"
+        },
+        "tagline": {
+          "en": "New path to business creation with franchise brands",
+          "mr": "Franchisee Brands सोबत उद्योगनिर्मितीचा नवा मार्ग"
+        },
+        "type": "initiative",
+        "typeMr": "उपक्रम",
+        "description": {
+          "en": "Franchise business development initiative connecting aspiring entrepreneurs with established brands for business creation opportunities",
+          "mr": "महत्त्वाकांक्षी उद्योजकांना प्रस्थापित ब्रँड्सशी जोडणारा फ्रँचायझी व्यवसाय विकास उपक्रम जो व्यवसाय निर्मितीच्या संधी प्रदान करतो"
+        },
+        "focusAreas": [
+          "Franchise business opportunities",
+          "Brand partnerships",
+          "Entrepreneurship development",
+          "Business setup support"
+        ],
+        "focusAreasMr": [
+          "फ्रँचायझी व्यवसाय संधी",
+          "ब्रँड भागीदारी",
+          "उद्योजकता विकास",
+          "व्यवसाय स्थापना समर्थन"
+        ],
+        "status": "Coming Soon",
+        "statusMr": "लवकरच सुरू होत आहे"
+      },
+      {
+        "id": "amrut_varga",
+        "name": {
+          "en": "Amrut Varga",
+          "mr": "अमृत वर्ग"
+        },
+        "tagline": {
+          "en": "Special group initiatives",
+          "mr": "विशेष गट उपक्रम"
+        },
+        "type": "division",
+        "typeMr": "विभाग",
+        "description": {
+          "en": "Special initiatives for specific target groups with customized programs addressing unique needs of different communities",
+          "mr": "विविध समुदायांच्या अद्वितीय गरजा पूर्ण करणार्‍या सानुकूलित कार्यक्रमांसह विशिष्ट लक्ष्य गटांसाठी विशेष उपक्रम"
+        },
+        "focusAreas": [
+          "Targeted group programs",
+          "Community-specific initiatives",
+          "Customized training",
+          "Inclusive development"
+        ],
+        "focusAreasMr": [
+          "लक्ष्यित गट कार्यक्रम",
+          "समुदाय-विशिष्ट उपक्रम",
+          "सानुकूलित प्रशिक्षण",
+          "सर्वसमावेशक विकास"
+        ],
+        "status": "Active",
+        "statusMr": "सक्रिय"
+      },
+      {
+        "id": "amrut_peth_direct_market",
+        "name": {
+          "en": "Amrut Peth Direct Market Management",
+          "mr": "अमृत पेठ थेट बाजारपेठ व्यवस्थापन"
+        },
+        "tagline": {
+          "en": "Direct market management initiative",
+          "mr": "थेट बाजारपेठ व्यवस्थापन उपक्रम"
+        },
+        "type": "initiative",
+        "typeMr": "उपक्रम",
+        "description": {
+          "en": "Direct market access and management platform connecting producers directly with consumers, eliminating intermediaries",
+          "mr": "उत्पादकांना ग्राहकांशी थेट जोडणारे, मध्यस्थ काढून टाकणारे थेट बाजार प्रवेश आणि व्यवस्थापन मंच"
+        },
+        "focusAreas": [
+          "Direct producer-consumer connection",
+          "Market access for farmers/artisans",
+          "Fair pricing mechanisms",
+          "Supply chain management"
+        ],
+        "focusAreasMr": [
+          "थेट उत्पादक-ग्राहक कनेक्शन",
+          "शेतकरी/कारागीर यांसाठी बाजार प्रवेश",
+          "न्याय्य किंमत यंत्रणा",
+          "पुरवठा साखळी व्यवस्थापन"
+        ],
+        "status": "Active",
+        "statusMr": "सक्रिय"
+      }
+    ],
+    "relationshipToSchemes": {
+      "explanation": {
+        "en": "These divisions/initiatives are organizational units under AMRUT. Each division runs multiple schemes/programs. Individual schemes are the actual benefit programs that people can apply for.",
+        "mr": "हे विभाग/उपक्रम अमृत अंतर्गत संघटनात्मक एकके आहेत. प्रत्येक विभाग अनेक योजना/कार्यक्रम चालवतो. वैयक्तिक योजना म्हणजे लोक ज्यासाठी अर्ज करू शकतात ते वास्तविक लाभ कार्यक्रम."
+      },
+      "hierarchy": {
+        "level1": {
+          "name": "AMRUT Organization",
+          "nameMr": "अमृत संस्था",
+          "description": "Main autonomous body",
+          "descriptionMr": "मुख्य स्वायत्त संस्था"
+        },
+        "level2": {
+          "name": "Divisions/Initiatives",
+          "nameMr": "विभाग/उपक्रम",
+          "description": "Sub-organizations like Amrut Vidya, Amrut Peth, etc.",
+          "descriptionMr": "अमृत विद्या, अमृत पेठ इत्यादी उप-संस्था",
+          "examples": [
+            "अमृत विद्या (Amrut Vidya)",
+            "अमृत पेठ (Amrut Peth)",
+            "अमृत महाराष्ट्र (Amrut Maharashtra)"
+          ]
+        },
+        "level3": {
+          "name": "Individual Schemes",
+          "nameMr": "वैयक्तिक योजना",
+          "description": "Specific programs people can apply for",
+          "descriptionMr": "लोक ज्यासाठी अर्ज करू शकतात अशे विशिष्ट कार्यक्रम",
+          "examples": [
+            "CNC Machining Training",
+            "Digital Marketing Course",
+            "UPSC Exam Coaching",
+            "E-commerce Micro Entrepreneur scheme"
+          ]
+        }
+      }
+    }
+  },
+  "voiceBotGuidance": {
+    "whenUserAsksAboutDivision": {
+      "pattern": "User asks: 'अमृत पेठ बद्दल सांगा' or 'अमृत विद्या म्हणजे काय?'",
+      "response": "Explain it as a DIVISION/INITIATIVE under AMRUT, not as a scheme. Mention what the division does and what types of schemes it runs.",
+      "responseMr": "हे अमृत अंतर्गत एक विभाग/उपक्रम म्हणून स्पष्ट करा, योजना म्हणून नाही. विभाग काय करतो आणि कोणत्या प्रकारच्या योजना चालवतो ते सांगा.",
+      "example": {
+        "userQuery": "अमृत पेठ बद्दल सांगा",
+        "correctResponse": "अमृत पेठ ही अमृत संस्थेची एक विभाग आहे जी ई-कॉमर्स आणि ऑनलाइन बाजारपेठ व्यवस्थापनावर काम करते. यामध्ये सूक्ष्म उद्योजकांना ऑनलाइन व्यवसाय सुरू करण्यासाठी मदत केली जाते. या विभागाअंतर्गत ई-कॉमर्स प्रशिक्षण, ऑनलाइन विक्री कौशल्ये, आणि डिजिटल मार्केटिंग यासारख्या योजना येतात.",
+        "wrongResponse": "अमृत पेठ ही एक योजना आहे..."
+      }
+    },
+    "whenUserAsksAboutSchemes": {
+      "pattern": "User asks about specific scheme like 'CNC मशीनिंग' or 'UPSC कोचिंग'",
+      "response": "Explain it as a SCHEME (योजना) and mention which division it belongs to if relevant",
+      "responseMr": "योजना म्हणून स्पष्ट करा आणि ती कोणत्या विभागाशी संबंधित आहे ते सांगा"
+    },
+    "divisionKeywords": [
+      "अमृत पेठ",
+      "अमृत विद्या",
+      "अमृत महाराष्ट्र",
+      "अमृत मानसमित्र",
+      "अमृत ड्रोन मिशन",
+      "अमृत पर्यटन",
+      "अमृत उद्यम मिशन",
+      "अमृत वर्ग"
+    ],
+    "contextInjectionTemplate": {
+      "mr": "अमृत ही मुख्य संस्था आहे ज्याच्या अंतर्गत विविध विभाग आहेत - जसे की अमृत विद्या (शिक्षण), अमृत पेठ (ई-कॉमर्स), अमृत महाराष्ट्र (माहिती पोर्टल) इ. प्रत्येक विभाग अनेक योजना चालवतो.",
+      "en": "AMRUT is the main organization with various divisions - such as Amrut Vidya (education), Amrut Peth (e-commerce), Amrut Maharashtra (information portal), etc. Each division runs multiple schemes."
+    }
+  },
+  "metadata": {
+    "lastUpdated": "2026-03-24",
+    "source": "mahaamrut.org.in organizational structure",
+    "dataVersion": "1.0",
+    "purpose": "Define organizational hierarchy to distinguish divisions from schemes"
+  }
+}

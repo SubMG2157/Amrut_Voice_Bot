@@ -1,0 +1,35 @@
+@import "tailwindcss";
+
+:root {
+  --kims-bg: #06121a;
+  --kims-surface: #0d1f2b;
+  --kims-panel: #132937;
+  --kims-primary: #0cb5a7;
+  --kims-accent: #ffb454;
+}
+
+body {
+  font-family: 'Plus Jakarta Sans', 'Segoe UI', sans-serif;
+  background: linear-gradient(180deg, #06121a 0%, #081923 100%);
+  color: #f8fafc;
+  margin: 0;
+  min-height: 100vh;
+}
+
+#root {
+  min-height: 100vh;
+}
+
+::-webkit-scrollbar {
+  width: 8px;
+}
+::-webkit-scrollbar-track {
+  background: #10202c;
+}
+::-webkit-scrollbar-thumb {
+  background: #315064;
+  border-radius: 4px;
+}
+::-webkit-scrollbar-thumb:hover {
+  background: #3f6278;
+}

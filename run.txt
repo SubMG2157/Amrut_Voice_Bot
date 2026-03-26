@@ -1,0 +1,7 @@
+ngrok http 3001
+
+npm run start
+
+npm run kb:update
+
+npm run kb:verify
