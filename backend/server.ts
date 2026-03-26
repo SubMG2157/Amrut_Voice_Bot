@@ -224,7 +224,7 @@ httpServer.on('upgrade', (req, socket, head) => {
   const pathname = req.url?.split('?')[0] ?? '';
   const normalizedPathname = pathname.replace(/^\/+/, '/');
   const isGeminiBidiPath =
-    /^\/ws\/google\.ai\.generativelanguage\.[^.]+\.GenerativeService\.BidiGenerateContent$/.test(normalizedPathname);
+    /^\/ws\/google\.ai\.generativelanguage\.[^.]+\.GenerativeService\.BidiGenerateContent\/?$/.test(normalizedPathname);
   if (pathname === '/media') {
     wssMedia.handleUpgrade(req, socket, head, (ws) => {
       wssMedia.emit('connection', ws, req);
@@ -234,6 +234,7 @@ httpServer.on('upgrade', (req, socket, head) => {
       wssUiSync.emit('connection', ws, req);
     });
   } else if (isGeminiBidiPath) {
+    console.log('[WS] Gemini BidiGenerateContent upgrade accepted:', pathname);
     wssGeminiProxy.handleUpgrade(req, socket, head, (ws) => {
       wssGeminiProxy.emit('connection', ws, req);
     });
