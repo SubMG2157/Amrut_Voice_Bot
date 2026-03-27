@@ -1,21 +1,35 @@
 # KIMS Hospital AI Agent — Runtime Logs
-# Started: 2026-03-26T07:29:16.684Z
+# Started: 2026-03-27T09:36:01.545Z
 ────────────────────────────────────────────────────────────
 
-[2026-03-26T07:29:16.706Z] [INFO] File logger initialized → logs/logs.txt
-[2026-03-26T07:29:16.707Z] [INFO] Plivo: LOADED
-[2026-03-26T07:29:16.761Z] [INFO] 
+[2026-03-27T09:36:01.549Z] [INFO] File logger initialized → logs/logs.txt
+[2026-03-27T09:36:01.549Z] [INFO] Plivo: LOADED
+[2026-03-27T09:36:01.568Z] [INFO] 
 🚀 अमृत सरकारी योजना पोर्टल Agent — Running on port 3001
-[2026-03-26T07:29:16.762Z] [INFO] ──────────────────────────────────────────
-[2026-03-26T07:29:16.763Z] [INFO]   🌐 Frontend:  http://localhost:3001
-[2026-03-26T07:29:16.764Z] [INFO]   📡 API:       http://localhost:3001/api/...
-[2026-03-26T07:29:16.765Z] [INFO]   📞 Plivo:     https://d871-2409-40c2-1153-ad08-7014-114a-284c-3ea4.ngrok-free.app/plivo/answer
-[2026-03-26T07:29:16.766Z] [INFO]   🔗 ngrok URL: https://d871-2409-40c2-1153-ad08-7014-114a-284c-3ea4.ngrok-free.app
-[2026-03-26T07:29:16.767Z] [INFO] ──────────────────────────────────────────
-[2026-03-26T07:29:16.767Z] [INFO]   Share this with customers: https://d871-2409-40c2-1153-ad08-7014-114a-284c-3ea4.ngrok-free.app
-[2026-03-26T07:29:16.768Z] [INFO] ──────────────────────────────────────────
+[2026-03-27T09:36:01.569Z] [INFO] ──────────────────────────────────────────
+[2026-03-27T09:36:01.569Z] [INFO]   🌐 Frontend:  http://localhost:3001
+[2026-03-27T09:36:01.570Z] [INFO]   📡 API:       http://localhost:3001/api/...
+[2026-03-27T09:36:01.570Z] [INFO]   📞 Plivo:     https://c394-36-255-182-251.ngrok-free.app/plivo/answer
+[2026-03-27T09:36:01.571Z] [INFO]   🔗 ngrok URL: https://c394-36-255-182-251.ngrok-free.app
+[2026-03-27T09:36:01.571Z] [INFO] ──────────────────────────────────────────
+[2026-03-27T09:36:01.572Z] [INFO]   Share this with customers: https://c394-36-255-182-251.ngrok-free.app
+[2026-03-27T09:36:01.572Z] [INFO] ──────────────────────────────────────────
 
-[2026-03-26T07:30:31.651Z] [INFO] [GeminiProxy] New proxy connection from browser
-[2026-03-26T07:30:32.059Z] [INFO] [GeminiProxy] Connected to Google Gemini
-[2026-03-26T07:39:23.084Z] [INFO] [GeminiProxy] New proxy connection from browser
-[2026-03-26T07:39:23.767Z] [INFO] [GeminiProxy] Connected to Google Gemini
+[2026-03-27T09:36:06.148Z] [INFO] [WS] Gemini BidiGenerateContent upgrade accepted: //ws/google.ai.generativelanguage.v1beta.GenerativeService.BidiGenerateContent
+[2026-03-27T09:36:06.150Z] [INFO] [GeminiProxy] New proxy connection from browser
+[2026-03-27T09:36:06.264Z] [INFO] [GeminiProxy] Connected to Google Gemini
+[2026-03-27T09:36:30.661Z] [INFO] [WS] Gemini BidiGenerateContent upgrade accepted: //ws/google.ai.generativelanguage.v1beta.GenerativeService.BidiGenerateContent
+[2026-03-27T09:36:30.662Z] [INFO] [GeminiProxy] New proxy connection from browser
+[2026-03-27T09:36:30.745Z] [INFO] [GeminiProxy] Connected to Google Gemini
+[2026-03-27T09:36:41.800Z] [INFO] [WS] Gemini BidiGenerateContent upgrade accepted: //ws/google.ai.generativelanguage.v1beta.GenerativeService.BidiGenerateContent
+[2026-03-27T09:36:41.801Z] [INFO] [GeminiProxy] New proxy connection from browser
+[2026-03-27T09:36:41.883Z] [INFO] [GeminiProxy] Connected to Google Gemini
+[2026-03-27T09:36:52.106Z] [INFO] [WS] Gemini BidiGenerateContent upgrade accepted: //ws/google.ai.generativelanguage.v1beta.GenerativeService.BidiGenerateContent
+[2026-03-27T09:36:52.107Z] [INFO] [GeminiProxy] New proxy connection from browser
+[2026-03-27T09:36:52.193Z] [INFO] [GeminiProxy] Connected to Google Gemini
+[2026-03-27T09:37:02.511Z] [INFO] [WS] Gemini BidiGenerateContent upgrade accepted: //ws/google.ai.generativelanguage.v1beta.GenerativeService.BidiGenerateContent
+[2026-03-27T09:37:02.512Z] [INFO] [GeminiProxy] New proxy connection from browser
+[2026-03-27T09:37:02.600Z] [INFO] [GeminiProxy] Connected to Google Gemini
+[2026-03-27T09:37:13.142Z] [INFO] [WS] Gemini BidiGenerateContent upgrade accepted: //ws/google.ai.generativelanguage.v1beta.GenerativeService.BidiGenerateContent
+[2026-03-27T09:37:13.143Z] [INFO] [GeminiProxy] New proxy connection from browser
+[2026-03-27T09:37:13.225Z] [INFO] [GeminiProxy] Connected to Google Gemini

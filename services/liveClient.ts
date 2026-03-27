@@ -70,6 +70,14 @@ export class LiveClient {
   private dropStaleModelUntil = 0;
   /** True during the first agent greeting; prevents accidental mic echo noise from stopping the greeting mid-way. */
   private greetingInProgress = false;
+  /** Timestamp when the last agent AudioBufferSourceNode finished playing.
+   *  Used to extend echo-suppression for ~800ms after agent stops speaking,
+   *  preventing the microphone from picking up residual speaker echo. */
+  private lastAgentAudioEndedAt = 0;
+  /** Timestamp of last user transcript flush — used to prevent rapid-fire turns. */
+  private lastUserFlushAt = 0;
+  /** Timestamp of last context injection — rate-limit to once per 2s. */
+  private lastContextInjectionAt = 0;
 
   constructor(config: LiveClientConfig) {
     this.config = config;
@@ -276,29 +284,32 @@ export class LiveClient {
       const peak = Math.max(...abs);
       const rms = Math.sqrt(abs.reduce((sum, v) => sum + v * v, 0) / Math.max(1, abs.length));
       const agentSpeakingNow = this.activeAudioNodes.length > 0;
+      const msSinceAgentStopped = Date.now() - this.lastAgentAudioEndedAt;
+      const inEchoTailWindow = !agentSpeakingNow && msSinceAgentStopped < 800;
 
-      // Filter ambient mic hiss/fan noise and weak echo while agent is speaking.
       const likelyNoise = peak < 0.085 && rms < 0.018;
-      // Suppress weak/medium echo while agent speaks; true user speech should exceed this.
       const weakEchoWhileAgentSpeaking = agentSpeakingNow && (peak < 0.2 || rms < 0.03);
+      const echoTailSuppression = inEchoTailWindow && (peak < 0.25 || rms < 0.04);
 
-      if (likelyNoise || weakEchoWhileAgentSpeaking) {
+      if (likelyNoise || weakEchoWhileAgentSpeaking || echoTailSuppression) {
         inputData.fill(0);
         this.consecutiveUserSpeechFrames = 0;
       } else {
         this.consecutiveUserSpeechFrames += 1;
-        this.currentUtteranceHasRealSpeech = true;
-        // Mark likely user speech only after stable voice for a few frames
-        // to avoid false positives from speaker leak/echo bursts.
-        if (!agentSpeakingNow || this.consecutiveUserSpeechFrames >= 3) {
+        const nearAgentSpeech = agentSpeakingNow || inEchoTailWindow;
+        const framesNeeded = nearAgentSpeech ? 6 : 1;
+        if (this.consecutiveUserSpeechFrames >= framesNeeded) {
+          this.currentUtteranceHasRealSpeech = true;
+        }
+        if (!nearAgentSpeech || this.consecutiveUserSpeechFrames >= 5) {
           this.lastLikelyUserSpeechAt = Date.now();
         }
-        // Manual barge-in: require stable, strong speech while agent audio is playing.
         const stableUserBargeIn =
+          !this.greetingInProgress &&
           agentSpeakingNow &&
-          this.consecutiveUserSpeechFrames >= 3 &&
-          peak >= 0.23 &&
-          rms >= 0.035;
+          this.consecutiveUserSpeechFrames >= 5 &&
+          peak >= 0.25 &&
+          rms >= 0.04;
         if (stableUserBargeIn && Date.now() - this.lastManualInterruptAt > 900) {
           this.stopAudioPlayback();
           this.dropStaleModelUntil = Date.now() + 1400;
@@ -351,12 +362,14 @@ export class LiveClient {
         clearTimeout(this.outboundGuardTimer);
         this.outboundGuardTimer = null;
       }
-      // Delay mic enable by 600ms so the agent's greeting audio doesn't echo back
-      // into the mic and trigger a false interruption on hardware without good AEC
-      setTimeout(() => {
-        this.allowSendAudio = true;
-        log('Outbound guard: agent spoke first — enabling customer audio');
-      }, 600);
+      // Keep mic muted through the initial greeting turn. We enable customer audio
+      // on greeting turnComplete to avoid greeting self-interrupt from speaker echo.
+      if (!this.greetingInProgress) {
+        setTimeout(() => {
+          this.allowSendAudio = true;
+          log('Outbound guard: agent spoke first — enabling customer audio');
+        }, 600);
+      }
     }
 
     // Agent responded - reset response timeout
@@ -424,6 +437,9 @@ export class LiveClient {
           if (idx !== -1) {
             this.activeAudioNodes.splice(idx, 1);
           }
+          if (this.activeAudioNodes.length === 0) {
+            this.lastAgentAudioEndedAt = Date.now();
+          }
         };
 
         source.start(this.nextStartTime);
@@ -474,6 +490,7 @@ export class LiveClient {
       if (this.greetingInProgress) {
         this.greetingInProgress = false;
         this.allowSendAudio = true;
+        log('Greeting completed — enabling customer audio');
       }
       if (this.agentBuffer.trim()) {
         this.flushAgentBuffer();
@@ -495,6 +512,13 @@ export class LiveClient {
     const raw = this.customerBuffer.trim();
     if (!raw) return;
 
+    const now = Date.now();
+    if (now - this.lastUserFlushAt < 1200) {
+      this.customerBuffer = '';
+      this.currentUtteranceHasRealSpeech = false;
+      return;
+    }
+
     const isExplicitUnclear = /^\[?unclear\]?$/i.test(raw);
     if (isExplicitUnclear) {
       this.config.onTranscript('[unclear]', 'user', true);
@@ -507,6 +531,14 @@ export class LiveClient {
       this.currentUtteranceHasRealSpeech = false;
       return;
     }
+
+    if (this.isLikelyEchoOfAgent(raw)) {
+      log('Dropped user transcript — likely echo of agent speech');
+      this.customerBuffer = '';
+      this.currentUtteranceHasRealSpeech = false;
+      return;
+    }
+
     const custResult = sanitizeTranscript(raw, {
       preferArabic: false,
       dropIsolatedLatinWords: true,
@@ -517,10 +549,41 @@ export class LiveClient {
       this.config.onTranscript(custResult.output, 'user', true);
       this.userTurnsCount += 1;
       this.dropStaleModelUntil = 0;
+      this.lastUserFlushAt = now;
       this.injectSchemeContextForQuery(custResult.output);
     }
     this.customerBuffer = '';
     this.currentUtteranceHasRealSpeech = false;
+  }
+
+  /** Detect if a user transcript is actually the agent's own speech echoed back via the mic. */
+  private isLikelyEchoOfAgent(userText: string): boolean {
+    if (!this.lastAgentTranscript) return false;
+    const msSinceAgent = Date.now() - this.lastAgentTranscriptAt;
+    if (msSinceAgent > 8000) return false;
+
+    const norm = (s: string) => s.replace(/\s+/g, '').toLowerCase();
+    const userN = norm(userText);
+    const agentN = norm(this.lastAgentTranscript);
+    if (!userN || !agentN) return false;
+
+    if (agentN.includes(userN) || userN.includes(agentN)) return true;
+
+    const overlap = this.substringOverlapRatio(userN, agentN);
+    return overlap > 0.55;
+  }
+
+  private substringOverlapRatio(a: string, b: string): number {
+    const shorter = a.length <= b.length ? a : b;
+    const longer = a.length > b.length ? a : b;
+    if (!shorter.length) return 0;
+    let matched = 0;
+    const windowSize = Math.max(3, Math.floor(shorter.length * 0.3));
+    for (let i = 0; i <= shorter.length - windowSize; i++) {
+      const chunk = shorter.slice(i, i + windowSize);
+      if (longer.includes(chunk)) matched += windowSize;
+    }
+    return Math.min(1, matched / shorter.length);
   }
 
   private flushAgentBuffer() {
@@ -560,6 +623,9 @@ export class LiveClient {
 
   private injectSchemeContextForQuery(query: string) {
     if (!this.session || !this.config.availableSchemes?.length) return;
+    const now = Date.now();
+    if (now - this.lastContextInjectionAt < 2000) return;
+    this.lastContextInjectionAt = now;
     const tokenCount = query.trim().split(/\s+/).filter(Boolean).length;
 
     // For longer queries, keep the injected context smaller to reduce model turnaround time.
